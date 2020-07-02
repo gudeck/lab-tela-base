@@ -3,7 +3,8 @@ unit uBase;
 interface
 
 uses Windows, Messages, SysUtils, Classes, Graphics, Controls,
-  Forms, Dialogs, DB, ComCtrls, DBCtrls, ToolWin, StdCtrls, ExtCtrls, Grids, DBGrids, DBClient,
+  Forms, Dialogs, DB, ComCtrls, DBCtrls, ToolWin, StdCtrls, ExtCtrls, Grids,
+  DBGrids, DBClient,
   Menus, Provider, ImageList, ImgList, Data.Win.ADODB;
 
 type
@@ -65,7 +66,8 @@ begin
   DataSource.DataSet.Close;
   DataSource.DataSet.Open;
 
-  StatusBar.Panels[1].Text := IntToStr(DataSource.DataSet.RecordCount);
+  StatusBar.Panels[0].Text := StatusBar.Panels[0].Text +
+    IntToStr(DataSource.DataSet.RecordCount);
 
 end;
 
@@ -185,9 +187,8 @@ procedure TfBase.FormKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
   if (Key = VK_RETURN) and not(ActiveControl is TDBGrid) and
-    not(ActiveControl is TMemo)
-   and not (ActiveControl is TDBMemo) and not (ActiveControl is TDBRichEdit)
-  then
+    not(ActiveControl is TMemo) and not(ActiveControl is TDBMemo) and
+    not(ActiveControl is TDBRichEdit) then
     Perform(WM_NEXTDLGCTL, 0, 0);
 end;
 

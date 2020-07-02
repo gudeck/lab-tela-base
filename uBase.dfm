@@ -36,9 +36,6 @@ object fBase: TfBase
       Images = Imagens
       List = True
       TabOrder = 0
-      ExplicitLeft = 310
-      ExplicitTop = 1
-      ExplicitHeight = 21
       object btNovo: TToolButton
         Left = 0
         Top = 0
@@ -103,7 +100,6 @@ object fBase: TfBase
     Height = 50
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 16
   end
   object PageControl: TPageControl
     Left = 0
@@ -113,11 +109,8 @@ object fBase: TfBase
     ActivePage = tabFiltros
     Align = alClient
     TabOrder = 2
-    ExplicitTop = 73
-    ExplicitHeight = 193
     object tabInformacoes: TTabSheet
       Caption = 'Informa'#231#245'es'
-      ExplicitHeight = 165
       object gbInformacoes: TGroupBox
         Left = 0
         Top = 0
@@ -125,16 +118,11 @@ object fBase: TfBase
         Height = 142
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 144
-        ExplicitTop = 32
-        ExplicitWidth = 185
-        ExplicitHeight = 105
       end
     end
     object tabFiltros: TTabSheet
       Caption = 'Filtros para Pesquisa'
       ImageIndex = 1
-      ExplicitHeight = 165
       object gbFiltros: TGroupBox
         Left = 0
         Top = 0
@@ -163,10 +151,11 @@ object fBase: TfBase
         Top = 123
         Width = 464
         Height = 19
-        Panels = <>
-        ExplicitLeft = 232
-        ExplicitTop = 72
-        ExplicitWidth = 0
+        Panels = <
+          item
+            Text = 'N'#186' de Registros: '
+            Width = 50
+          end>
       end
     end
   end
